@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Globalization;
 
 using Money_Simulator;
 
@@ -86,6 +87,29 @@ namespace Money_Simulator
         }
 
 
+
+        // Navigation
+
+        private void EarnButton_Click(object sender, EventArgs e)
+        {
+            EarnPage.Visible = true;
+            EarnPage.Enabled = true;
+
+            SlotsPage.Visible = false;
+            SlotsPage.Enabled = false;
+        }
+
+        private void SlotsButton_Click(object sender, EventArgs e)
+        {
+            EarnPage.Visible = false;
+            EarnPage.Enabled = false;
+
+            SlotsPage.Visible = true;
+            SlotsPage.Enabled = true;
+        }
+
+
+
         // Add Money Per Click
 
         //DataHandler datahandler = new DataHandler();
@@ -99,9 +123,10 @@ namespace Money_Simulator
             //dataHandler.TryFromLocal();
 
             var handler = new DataHandler();
-            var addBal = handler.AddBalance(2);
+            var addBal = handler.AddBalance(1);
 
-            MoneyDisplayLabel.Text = addBal.ToString();
+            //MoneyDisplayLabel.Text = addBal.ToString();
+            UpdateMoney();
 
         }
         // Updating The Money View
@@ -109,7 +134,10 @@ namespace Money_Simulator
         {
             var handler = new DataHandler();
             var addBal = handler.AddBalance(0);
-            MoneyDisplayLabel.Text = Convert.ToString(addBal);
+            MoneyDisplayLabel.Text = addBal.ToString("N0", CultureInfo.InvariantCulture);
+
+            IncomePerClick.Text = String.Concat("Income Per Click: $", 5);
+            //MoneyDisplayLabel.Text = Convert.ToString(addBal);
         }
 
 
@@ -168,6 +196,11 @@ namespace Money_Simulator
                     {
                         WonStateSlots.Text = "You lost.";
                     }
+                    else if (slotResult == "777")
+                    {
+                        WonStateSlots.Text = "You must be using some cheat software\n 25x your bet!";
+                        var addBalance = handler.AddBalance(attemtedBetAmount * 25);
+                    }
                     else if (slotWinAmount == "2")
                     {
                         WonStateSlots.Text = "You won 3x your bet!";
@@ -175,7 +208,7 @@ namespace Money_Simulator
                     }
                     else if (slotWinAmount == "3")
                     {
-                        WonStateSlots.Text = "You won 8x your bet!\n cheater?";
+                        WonStateSlots.Text = "You won 8x your bet!\n BIG WIN!";
                         var addBalance = handler.AddBalance(attemtedBetAmount * 8);
                     }
 

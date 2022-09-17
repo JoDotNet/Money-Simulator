@@ -94,7 +94,6 @@ namespace Money_Simulator
                 return threeEqual + getnumbers;
             }
             else return "0" + getnumbers;
-
         }
     }
 }

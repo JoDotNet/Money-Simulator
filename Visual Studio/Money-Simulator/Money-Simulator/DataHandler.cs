@@ -40,7 +40,7 @@ namespace Money_Simulator
                 string saveDataContent = sr.ReadToEnd();
                 var saveDataJson = JsonConvert.DeserializeObject<DataObject>(saveDataContent);
 
-                Console.WriteLine($"ExeBalance was set to this value from reading savedata.json: {saveDataJson.JBalance}");
+                //Console.WriteLine($"ExeBalance was set to this value from reading savedata.json: {saveDataJson.JBalance}");
 
                 return saveDataJson;
             }

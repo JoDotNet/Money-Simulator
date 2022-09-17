@@ -49,11 +49,14 @@
             this.SlotSecondNumber = new System.Windows.Forms.Label();
             this.SlotFirstNumber = new System.Windows.Forms.Label();
             this.SlotClickAccept = new System.Windows.Forms.Button();
+            this.StatsPanel = new System.Windows.Forms.Panel();
+            this.IncomePerClick = new System.Windows.Forms.Label();
             this.TopBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.EarnPage.SuspendLayout();
             this.SlotsPage.SuspendLayout();
             this.SlotResultPanel.SuspendLayout();
+            this.StatsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopBar
@@ -107,11 +110,12 @@
             this.SlotsButton.AutoSize = true;
             this.SlotsButton.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SlotsButton.ForeColor = System.Drawing.Color.White;
-            this.SlotsButton.Location = new System.Drawing.Point(270, 25);
+            this.SlotsButton.Location = new System.Drawing.Point(315, 25);
             this.SlotsButton.Name = "SlotsButton";
             this.SlotsButton.Size = new System.Drawing.Size(61, 25);
             this.SlotsButton.TabIndex = 5;
             this.SlotsButton.Text = "Slots";
+            this.SlotsButton.Click += new System.EventHandler(this.SlotsButton_Click);
             // 
             // EarnButton
             // 
@@ -119,11 +123,12 @@
             this.EarnButton.AutoSize = true;
             this.EarnButton.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EarnButton.ForeColor = System.Drawing.Color.White;
-            this.EarnButton.Location = new System.Drawing.Point(337, 25);
+            this.EarnButton.Location = new System.Drawing.Point(382, 25);
             this.EarnButton.Name = "EarnButton";
             this.EarnButton.Size = new System.Drawing.Size(57, 25);
             this.EarnButton.TabIndex = 4;
             this.EarnButton.Text = "Earn";
+            this.EarnButton.Click += new System.EventHandler(this.EarnButton_Click);
             // 
             // panel1
             // 
@@ -218,8 +223,9 @@
             // 
             // EarnPage
             // 
+            this.EarnPage.Controls.Add(this.StatsPanel);
             this.EarnPage.Controls.Add(this.MoneyButton);
-            this.EarnPage.Location = new System.Drawing.Point(1000, 1000);
+            this.EarnPage.Location = new System.Drawing.Point(12, 56);
             this.EarnPage.Name = "EarnPage";
             this.EarnPage.Size = new System.Drawing.Size(526, 582);
             this.EarnPage.TabIndex = 1;
@@ -247,7 +253,7 @@
             this.SlotsPage.Controls.Add(this.SlotBetAmount);
             this.SlotsPage.Controls.Add(this.SlotResultPanel);
             this.SlotsPage.Controls.Add(this.SlotClickAccept);
-            this.SlotsPage.Location = new System.Drawing.Point(12, 56);
+            this.SlotsPage.Location = new System.Drawing.Point(600, 56);
             this.SlotsPage.Name = "SlotsPage";
             this.SlotsPage.Size = new System.Drawing.Size(526, 582);
             this.SlotsPage.TabIndex = 2;
@@ -352,6 +358,25 @@
             this.SlotClickAccept.UseVisualStyleBackColor = true;
             this.SlotClickAccept.Click += new System.EventHandler(this.SlotClickAccept_Click);
             // 
+            // StatsPanel
+            // 
+            this.StatsPanel.Controls.Add(this.IncomePerClick);
+            this.StatsPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.StatsPanel.Location = new System.Drawing.Point(0, 0);
+            this.StatsPanel.Name = "StatsPanel";
+            this.StatsPanel.Size = new System.Drawing.Size(250, 465);
+            this.StatsPanel.TabIndex = 1;
+            // 
+            // IncomePerClick
+            // 
+            this.IncomePerClick.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IncomePerClick.ForeColor = System.Drawing.Color.White;
+            this.IncomePerClick.Location = new System.Drawing.Point(0, 20);
+            this.IncomePerClick.Name = "IncomePerClick";
+            this.IncomePerClick.Size = new System.Drawing.Size(250, 23);
+            this.IncomePerClick.TabIndex = 0;
+            this.IncomePerClick.Text = "Income Per Click: $1";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,6 +399,7 @@
             this.SlotsPage.ResumeLayout(false);
             this.SlotsPage.PerformLayout();
             this.SlotResultPanel.ResumeLayout(false);
+            this.StatsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -401,6 +427,8 @@
         private System.Windows.Forms.TextBox SlotBetAmount;
         private System.Windows.Forms.Label WonStateSlots;
         private System.Windows.Forms.Label moneyicondollar;
+        private System.Windows.Forms.Panel StatsPanel;
+        private System.Windows.Forms.Label IncomePerClick;
     }
 }
 
