@@ -41,12 +41,13 @@
             this.EarnPage = new System.Windows.Forms.Panel();
             this.MoneyButton = new System.Windows.Forms.Button();
             this.SlotsPage = new System.Windows.Forms.Panel();
+            this.SlotBetAmount = new System.Windows.Forms.TextBox();
             this.SlotResultPanel = new System.Windows.Forms.Panel();
+            this.SlotThirdNumber = new System.Windows.Forms.Label();
+            this.SlotSecondNumber = new System.Windows.Forms.Label();
             this.SlotFirstNumber = new System.Windows.Forms.Label();
             this.SlotClickAccept = new System.Windows.Forms.Button();
-            this.SlotSecondNumber = new System.Windows.Forms.Label();
-            this.SlotThirdNumber = new System.Windows.Forms.Label();
-            this.SlotBetAmount = new System.Windows.Forms.TextBox();
+            this.WonStateSlots = new System.Windows.Forms.Label();
             this.TopBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.EarnPage.SuspendLayout();
@@ -228,6 +229,7 @@
             // 
             // SlotsPage
             // 
+            this.SlotsPage.Controls.Add(this.WonStateSlots);
             this.SlotsPage.Controls.Add(this.SlotBetAmount);
             this.SlotsPage.Controls.Add(this.SlotResultPanel);
             this.SlotsPage.Controls.Add(this.SlotClickAccept);
@@ -236,6 +238,22 @@
             this.SlotsPage.Size = new System.Drawing.Size(526, 582);
             this.SlotsPage.TabIndex = 2;
             this.SlotsPage.Visible = false;
+            this.SlotsPage.Paint += new System.Windows.Forms.PaintEventHandler(this.SlotsPage_Paint);
+            // 
+            // SlotBetAmount
+            // 
+            this.SlotBetAmount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SlotBetAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
+            this.SlotBetAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SlotBetAmount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SlotBetAmount.ForeColor = System.Drawing.Color.White;
+            this.SlotBetAmount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SlotBetAmount.Location = new System.Drawing.Point(115, 430);
+            this.SlotBetAmount.Margin = new System.Windows.Forms.Padding(0);
+            this.SlotBetAmount.Name = "SlotBetAmount";
+            this.SlotBetAmount.Size = new System.Drawing.Size(300, 32);
+            this.SlotBetAmount.TabIndex = 2;
+            this.SlotBetAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SlotResultPanel
             // 
@@ -246,6 +264,36 @@
             this.SlotResultPanel.Name = "SlotResultPanel";
             this.SlotResultPanel.Size = new System.Drawing.Size(526, 136);
             this.SlotResultPanel.TabIndex = 1;
+            // 
+            // SlotThirdNumber
+            // 
+            this.SlotThirdNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
+            this.SlotThirdNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SlotThirdNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SlotThirdNumber.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SlotThirdNumber.ForeColor = System.Drawing.Color.White;
+            this.SlotThirdNumber.Location = new System.Drawing.Point(337, 0);
+            this.SlotThirdNumber.Name = "SlotThirdNumber";
+            this.SlotThirdNumber.Size = new System.Drawing.Size(150, 136);
+            this.SlotThirdNumber.TabIndex = 2;
+            this.SlotThirdNumber.Text = "0";
+            this.SlotThirdNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SlotThirdNumber.UseMnemonic = false;
+            // 
+            // SlotSecondNumber
+            // 
+            this.SlotSecondNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
+            this.SlotSecondNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SlotSecondNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SlotSecondNumber.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SlotSecondNumber.ForeColor = System.Drawing.Color.White;
+            this.SlotSecondNumber.Location = new System.Drawing.Point(187, 0);
+            this.SlotSecondNumber.Name = "SlotSecondNumber";
+            this.SlotSecondNumber.Size = new System.Drawing.Size(150, 136);
+            this.SlotSecondNumber.TabIndex = 1;
+            this.SlotSecondNumber.Text = "0";
+            this.SlotSecondNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SlotSecondNumber.UseMnemonic = false;
             // 
             // SlotFirstNumber
             // 
@@ -278,50 +326,18 @@
             this.SlotClickAccept.UseVisualStyleBackColor = true;
             this.SlotClickAccept.Click += new System.EventHandler(this.SlotClickAccept_Click);
             // 
-            // SlotSecondNumber
+            // WonStateSlots
             // 
-            this.SlotSecondNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
-            this.SlotSecondNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SlotSecondNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SlotSecondNumber.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SlotSecondNumber.ForeColor = System.Drawing.Color.White;
-            this.SlotSecondNumber.Location = new System.Drawing.Point(187, 0);
-            this.SlotSecondNumber.Name = "SlotSecondNumber";
-            this.SlotSecondNumber.Size = new System.Drawing.Size(150, 136);
-            this.SlotSecondNumber.TabIndex = 1;
-            this.SlotSecondNumber.Text = "0";
-            this.SlotSecondNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SlotSecondNumber.UseMnemonic = false;
-            // 
-            // SlotThirdNumber
-            // 
-            this.SlotThirdNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
-            this.SlotThirdNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SlotThirdNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SlotThirdNumber.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SlotThirdNumber.ForeColor = System.Drawing.Color.White;
-            this.SlotThirdNumber.Location = new System.Drawing.Point(337, 0);
-            this.SlotThirdNumber.Name = "SlotThirdNumber";
-            this.SlotThirdNumber.Size = new System.Drawing.Size(150, 136);
-            this.SlotThirdNumber.TabIndex = 2;
-            this.SlotThirdNumber.Text = "0";
-            this.SlotThirdNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SlotThirdNumber.UseMnemonic = false;
-            // 
-            // SlotBetAmount
-            // 
-            this.SlotBetAmount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SlotBetAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
-            this.SlotBetAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SlotBetAmount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SlotBetAmount.ForeColor = System.Drawing.Color.White;
-            this.SlotBetAmount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.SlotBetAmount.Location = new System.Drawing.Point(115, 430);
-            this.SlotBetAmount.Margin = new System.Windows.Forms.Padding(0);
-            this.SlotBetAmount.Name = "SlotBetAmount";
-            this.SlotBetAmount.Size = new System.Drawing.Size(300, 32);
-            this.SlotBetAmount.TabIndex = 2;
-            this.SlotBetAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.WonStateSlots.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WonStateSlots.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WonStateSlots.ForeColor = System.Drawing.Color.White;
+            this.WonStateSlots.Location = new System.Drawing.Point(37, 304);
+            this.WonStateSlots.Name = "WonStateSlots";
+            this.WonStateSlots.Size = new System.Drawing.Size(450, 55);
+            this.WonStateSlots.TabIndex = 7;
+            this.WonStateSlots.Text = "PlaceHolder";
+            this.WonStateSlots.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.WonStateSlots.Click += new System.EventHandler(this.WonStateSlots_Click);
             // 
             // MainWindow
             // 
@@ -370,6 +386,7 @@
         private System.Windows.Forms.Label SlotThirdNumber;
         private System.Windows.Forms.Label SlotSecondNumber;
         private System.Windows.Forms.TextBox SlotBetAmount;
+        private System.Windows.Forms.Label WonStateSlots;
     }
 }
 

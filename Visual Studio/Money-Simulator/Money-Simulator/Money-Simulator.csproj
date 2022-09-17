@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Slots.cs" />
     <Content Include="copy.txt" />
     <Content Include="copy2.txt" />
     <Compile Include="MainWindow.cs">
