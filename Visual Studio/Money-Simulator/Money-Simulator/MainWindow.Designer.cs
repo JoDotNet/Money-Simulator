@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.TopBar = new System.Windows.Forms.Panel();
+            this.moneyicondollar = new System.Windows.Forms.Label();
             this.MoneyDisplayLabel = new System.Windows.Forms.Label();
             this.SlotsButton = new System.Windows.Forms.Label();
             this.EarnButton = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.SlotSecondNumber = new System.Windows.Forms.Label();
             this.SlotFirstNumber = new System.Windows.Forms.Label();
             this.SlotClickAccept = new System.Windows.Forms.Button();
-            this.moneyicondollar = new System.Windows.Forms.Label();
             this.TopBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.EarnPage.SuspendLayout();
@@ -76,6 +76,18 @@
             this.TopBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopBar_MouseDown);
             this.TopBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopBar_MouseMove);
             this.TopBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TopBar_MouseUp);
+            // 
+            // moneyicondollar
+            // 
+            this.moneyicondollar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.moneyicondollar.AutoSize = true;
+            this.moneyicondollar.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moneyicondollar.ForeColor = System.Drawing.Color.White;
+            this.moneyicondollar.Location = new System.Drawing.Point(60, 19);
+            this.moneyicondollar.Name = "moneyicondollar";
+            this.moneyicondollar.Size = new System.Drawing.Size(24, 25);
+            this.moneyicondollar.TabIndex = 7;
+            this.moneyicondollar.Text = "$";
             // 
             // MoneyDisplayLabel
             // 
@@ -249,9 +261,8 @@
             this.WonStateSlots.ForeColor = System.Drawing.Color.White;
             this.WonStateSlots.Location = new System.Drawing.Point(37, 304);
             this.WonStateSlots.Name = "WonStateSlots";
-            this.WonStateSlots.Size = new System.Drawing.Size(450, 55);
+            this.WonStateSlots.Size = new System.Drawing.Size(450, 77);
             this.WonStateSlots.TabIndex = 7;
-            this.WonStateSlots.Text = "PlaceHolder";
             this.WonStateSlots.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.WonStateSlots.Click += new System.EventHandler(this.WonStateSlots_Click);
             // 
@@ -263,7 +274,7 @@
             this.SlotBetAmount.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SlotBetAmount.ForeColor = System.Drawing.Color.White;
             this.SlotBetAmount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.SlotBetAmount.Location = new System.Drawing.Point(115, 430);
+            this.SlotBetAmount.Location = new System.Drawing.Point(115, 433);
             this.SlotBetAmount.Margin = new System.Windows.Forms.Padding(0);
             this.SlotBetAmount.Name = "SlotBetAmount";
             this.SlotBetAmount.Size = new System.Drawing.Size(300, 32);
@@ -340,18 +351,6 @@
             this.SlotClickAccept.Text = "CONFIRM";
             this.SlotClickAccept.UseVisualStyleBackColor = true;
             this.SlotClickAccept.Click += new System.EventHandler(this.SlotClickAccept_Click);
-            // 
-            // moneyicondollar
-            // 
-            this.moneyicondollar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.moneyicondollar.AutoSize = true;
-            this.moneyicondollar.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moneyicondollar.ForeColor = System.Drawing.Color.White;
-            this.moneyicondollar.Location = new System.Drawing.Point(60, 19);
-            this.moneyicondollar.Name = "moneyicondollar";
-            this.moneyicondollar.Size = new System.Drawing.Size(24, 25);
-            this.moneyicondollar.TabIndex = 7;
-            this.moneyicondollar.Text = "$";
             // 
             // MainWindow
             // 

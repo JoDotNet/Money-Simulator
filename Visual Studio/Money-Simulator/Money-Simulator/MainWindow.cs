@@ -19,6 +19,13 @@ namespace Money_Simulator
         private bool mouseDown;
         private Point lastLocation;
 
+
+
+        // Game Variables
+
+        // Slots:
+        private bool slotCooldown = false;
+
         private void TopBar_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
@@ -106,21 +113,87 @@ namespace Money_Simulator
         }
 
 
-        private void SlotClickAccept_Click(object sender, EventArgs e)
+        private async void SlotClickAccept_Click(object sender, EventArgs e)
         {
-            var slots = new Slots();
-            var getSlots = slots.SlotGamble();
+            // Check if the player has enough money
+            var handler = new DataHandler();
+            var balance = handler.AddBalance(0);
 
-            //Console.WriteLine(getSlots);
-            var slotWinAmount = getSlots.Remove(getSlots.Length - 3);
-            var slotResult = getSlots.Remove(0, 1);
+            int attemtedBetAmount = 0;
 
-            //Console.WriteLine(slotWinAmount);
-            //Console.WriteLine(slotResult);
+            if (SlotBetAmount.TextLength > 0) attemtedBetAmount = int.Parse(SlotBetAmount.Text);
+            
+            bool allowedBet = false;
 
-            SlotFirstNumber.Text = Convert.ToString(slotResult[0]);
-            SlotSecondNumber.Text = Convert.ToString(slotResult[1]);
-            SlotThirdNumber.Text = Convert.ToString(slotResult[2]);
+            if (SlotBetAmount.TextLength > 0) allowedBet = true; else allowedBet = false;
+
+            if (balance >= attemtedBetAmount && allowedBet == true)
+            {
+                // Doesn't duplicate if game is already in place
+                if (slotCooldown == false)
+                {
+                    // Setting Debounce to True
+                    slotCooldown = true;
+
+                    // Removing Money
+                    var handler2 = new DataHandler();
+                    var balance2 = handler2.AddBalance(-attemtedBetAmount);
+                    UpdateMoney();
+
+
+                    var slots = new Slots();
+                    var getSlots = slots.SlotGamble();
+
+                    //Console.WriteLine(getSlots);
+                    var slotWinAmount = getSlots.Remove(getSlots.Length - 3);
+                    var slotResult = getSlots.Remove(0, 1);
+
+                    //Console.WriteLine(slotWinAmount);
+                    //Console.WriteLine(slotResult);
+
+                    SlotFirstNumber.Text = "0";
+                    SlotSecondNumber.Text = "0";
+                    SlotThirdNumber.Text = "0";
+
+                    await Task.Delay(500);
+
+                    SlotFirstNumber.Text = Convert.ToString(slotResult[0]);
+                    await Task.Delay(500);
+                    SlotSecondNumber.Text = Convert.ToString(slotResult[1]);
+                    await Task.Delay(500);
+                    SlotThirdNumber.Text = Convert.ToString(slotResult[2]);
+
+                    await Task.Delay(100);
+                    if (slotWinAmount == "0")
+                    {
+                        WonStateSlots.Text = "You lost.";
+                    }
+                    else if (slotWinAmount == "2")
+                    {
+                        WonStateSlots.Text = "You won 3x your bet!";
+                        var addBalance = handler.AddBalance(attemtedBetAmount * 3);
+                    }
+                    else if (slotWinAmount == "3")
+                    {
+                        WonStateSlots.Text = "You won 8x your bet!\n cheater?";
+                        var addBalance = handler.AddBalance(attemtedBetAmount * 8);
+                    }
+
+                    await Task.Delay(2500);
+
+                    UpdateMoney();
+                    SlotFirstNumber.Text = "0";
+                    SlotSecondNumber.Text = "0";
+                    SlotThirdNumber.Text = "0";
+                    WonStateSlots.Text = "";
+
+
+                    await Task.Delay(5);
+                    slotCooldown = false;
+                }
+            
+            }
+            
 
 
         }
