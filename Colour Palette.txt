@@ -1,0 +1,5 @@
+Theme: Slate
+#2E424D
+#5B8291
+#98DAD9
+#EAEBED

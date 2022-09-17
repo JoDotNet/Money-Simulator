@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+using System.IO;
+
+
+namespace Money_Simulator
+{
+    public class DataObject
+    {
+        public int JBalance { get; set; }
+    }
+
+    internal class DataHandler
+    {
+        public int ExeBalance = 0;
+
+        public void AddBalance(int amt)
+        {
+            ExeBalance = ExeBalance + amt;
+            Console.WriteLine(ExeBalance);
+        }
+
+        public void LoadSave()
+        {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "savedata.json");
+            StreamReader sr = new StreamReader(filePath);
+
+            string saveDataContent = sr.ReadToEnd();
+            var saveDataJson = JsonConvert.DeserializeObject<DataObject>(saveDataContent);
+
+            Console.WriteLine(saveDataJson.JBalance);
+            ExeBalance = saveDataJson.JBalance;
+            Console.WriteLine("ExeBalance was set to this value from reading savedata.json:");
+            Console.WriteLine(ExeBalance);
+        }
+
+        public void TryFromLocal()
+        {
+            AddBalance(1);
+        }
+        //public void Trying()
+        //{
+        //    while (true)
+        //    {
+        //        System.Threading.Thread.Sleep(1000);
+        //        AddBalance(1);
+        //    }
+        //}
+    }
+}
+
+
+/*
+     internal class DataHandler
+    {
+
+        public void Write(int OldMoney)
+        {
+
+            var data = new Data()
+            {
+                Balance = OldMoney + 1
+            };
+
+            var dataJson = JsonConvert.SerializeObject(data);
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.UpdateMoney(Balance: data.Balance);
+
+        }
+    }
+
+    [Serializable]
+    public class Data
+    {
+        public int Balance { get; set; }
+    }
+ 
+ */

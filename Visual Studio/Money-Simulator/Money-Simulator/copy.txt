@@ -1,0 +1,110 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+using System.IO;
+
+
+namespace Money_Simulator
+{
+    internal class DataHandler
+    {
+
+        
+
+        public void AddBalance(int amt)
+        {
+            //Balance = Balance + amt;
+            SaveData(amt);
+        }
+
+
+        public void LoadData()
+        {
+            string path = null;
+            path = AppDomain.CurrentDomain.BaseDirectory;
+            string filePath = Path.Combine(path, "data.json");
+
+            string content = "";
+
+            using (StreamReader sr = new StreamReader(filePath))
+            {
+                content = sr.ReadToEnd();
+                Console.WriteLine(content);
+
+            }
+            var deserializedObject = JsonConvert.DeserializeObject<DataObject>(content);
+
+            Console.WriteLine("This lol");
+            Console.WriteLine(deserializedObject.jBalance);
+            //Balance = deserializedObject.jBalance;
+            //Console.WriteLine(Balance);
+        }
+
+        public void SaveData(int amt)
+        {
+            
+            var data = new DataObject();
+            //data.jBalance = data.jBalance + Balance;
+            //Console.WriteLine(Balance);
+            data.jBalance = data.jBalance + amt;
+
+            Console.WriteLine(data.jBalance);
+            
+            var serializedObject = JsonConvert.SerializeObject(data);
+
+
+            string path = null;
+
+            path = AppDomain.CurrentDomain.BaseDirectory;
+            string filePath = Path.Combine(path, "data.json");
+
+            using (StreamWriter sw = new StreamWriter(filePath))
+            {
+                sw.Write(serializedObject);
+            }
+
+            LoadData();
+        }
+
+    }
+
+    public class DataObject
+    {
+        public int jBalance { get; set; }
+    }
+}
+
+
+/*
+     internal class DataHandler
+    {
+
+        public void Write(int OldMoney)
+        {
+
+            var data = new Data()
+            {
+                Balance = OldMoney + 1
+            };
+
+            var dataJson = JsonConvert.SerializeObject(data);
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.UpdateMoney(Balance: data.Balance);
+
+        }
+    }
+
+    [Serializable]
+    public class Data
+    {
+        public int Balance { get; set; }
+    }
+ 
+ */
