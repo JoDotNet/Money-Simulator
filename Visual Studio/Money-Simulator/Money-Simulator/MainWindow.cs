@@ -109,7 +109,19 @@ namespace Money_Simulator
         private void SlotClickAccept_Click(object sender, EventArgs e)
         {
             var slots = new Slots();
-            slots.GetNumbers();
+            var getSlots = slots.SlotGamble();
+
+            //Console.WriteLine(getSlots);
+            var slotWinAmount = getSlots.Remove(getSlots.Length - 3);
+            var slotResult = getSlots.Remove(0, 1);
+
+            //Console.WriteLine(slotWinAmount);
+            //Console.WriteLine(slotResult);
+
+            SlotFirstNumber.Text = Convert.ToString(slotResult[0]);
+            SlotSecondNumber.Text = Convert.ToString(slotResult[1]);
+            SlotThirdNumber.Text = Convert.ToString(slotResult[2]);
+
 
         }
 

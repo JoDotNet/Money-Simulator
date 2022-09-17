@@ -26,32 +26,74 @@ namespace Money_Simulator
         }
 
 
-        public void GetNumbers()
+        private string GetNumbers()
         {
             
             var generatedNumbers = GenerateNumbers();
-            Console.WriteLine(generatedNumbers);
+            //Console.WriteLine(generatedNumbers);
 
-            char generatedNumber1 = generatedNumbers[0];
-            char generatedNumber2 = generatedNumbers[1];
-            char generatedNumber3 = generatedNumbers[2];
-
-            Console.WriteLine(generatedNumber1);
-            Console.WriteLine(generatedNumber2);
-            Console.WriteLine(generatedNumber3);
+            return generatedNumbers;
+            //Console.WriteLine(generatedNumber1);
+            //Console.WriteLine(generatedNumber2);
+            //Console.WriteLine(generatedNumber3);
         }
 
 
 
         // Game Function (Request this)
-        public void SlotGamble()
+        public string SlotGamble()
         {
-            bool TwoEqual = false;
-            bool ThreeEqual = false;
-            bool TwoSeven = false;
-            bool ThreeSeven = false;
+            var getnumbers = GetNumbers();
 
+            string twoEqual = "0";
+            string threeEqual = "0";
+            //bool TwoSeven = false;
+            //bool ThreeSeven = false;
 
+            char generatedNumber1 = getnumbers[0];
+            char generatedNumber2 = getnumbers[1];
+            char generatedNumber3 = getnumbers[2];
+
+            //Console.WriteLine(generatedNumber1);
+            //Console.WriteLine(generatedNumber2);
+            //Console.WriteLine(generatedNumber3);
+
+            //Console.WriteLine(getnumbers);
+
+            List<char> Numbers = new List<char>();
+            Numbers.Add(generatedNumber1);
+            Numbers.Add(generatedNumber2);
+            Numbers.Add(generatedNumber3);
+
+            List<char> noDupes = Numbers.Distinct().ToList();
+
+            if (noDupes.Count == 2)
+            {
+                twoEqual = "2";
+            }
+            else if (noDupes.Count == 3)
+            {
+                twoEqual = "0";
+                threeEqual = "0";
+            }
+            else if (noDupes.Count == 1)
+            {
+                threeEqual = "3";
+            }
+            else
+            {
+                Console.WriteLine("Error");
+            }
+
+            if (twoEqual == "2")
+            {
+                return twoEqual + getnumbers;
+            }
+            else if (threeEqual == "3")
+            {
+                return threeEqual + getnumbers;
+            }
+            else return "0" + getnumbers;
 
         }
     }

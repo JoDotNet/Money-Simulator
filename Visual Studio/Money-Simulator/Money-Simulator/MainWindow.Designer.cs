@@ -41,13 +41,14 @@
             this.EarnPage = new System.Windows.Forms.Panel();
             this.MoneyButton = new System.Windows.Forms.Button();
             this.SlotsPage = new System.Windows.Forms.Panel();
+            this.WonStateSlots = new System.Windows.Forms.Label();
             this.SlotBetAmount = new System.Windows.Forms.TextBox();
             this.SlotResultPanel = new System.Windows.Forms.Panel();
             this.SlotThirdNumber = new System.Windows.Forms.Label();
             this.SlotSecondNumber = new System.Windows.Forms.Label();
             this.SlotFirstNumber = new System.Windows.Forms.Label();
             this.SlotClickAccept = new System.Windows.Forms.Button();
-            this.WonStateSlots = new System.Windows.Forms.Label();
+            this.moneyicondollar = new System.Windows.Forms.Label();
             this.TopBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.EarnPage.SuspendLayout();
@@ -59,6 +60,7 @@
             // 
             this.TopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
             this.TopBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.TopBar.Controls.Add(this.moneyicondollar);
             this.TopBar.Controls.Add(this.MoneyDisplayLabel);
             this.TopBar.Controls.Add(this.SlotsButton);
             this.TopBar.Controls.Add(this.EarnButton);
@@ -81,7 +83,7 @@
             this.MoneyDisplayLabel.AutoSize = true;
             this.MoneyDisplayLabel.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MoneyDisplayLabel.ForeColor = System.Drawing.Color.White;
-            this.MoneyDisplayLabel.Location = new System.Drawing.Point(56, 19);
+            this.MoneyDisplayLabel.Location = new System.Drawing.Point(80, 19);
             this.MoneyDisplayLabel.Name = "MoneyDisplayLabel";
             this.MoneyDisplayLabel.Size = new System.Drawing.Size(24, 25);
             this.MoneyDisplayLabel.TabIndex = 6;
@@ -240,6 +242,19 @@
             this.SlotsPage.Visible = false;
             this.SlotsPage.Paint += new System.Windows.Forms.PaintEventHandler(this.SlotsPage_Paint);
             // 
+            // WonStateSlots
+            // 
+            this.WonStateSlots.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.WonStateSlots.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WonStateSlots.ForeColor = System.Drawing.Color.White;
+            this.WonStateSlots.Location = new System.Drawing.Point(37, 304);
+            this.WonStateSlots.Name = "WonStateSlots";
+            this.WonStateSlots.Size = new System.Drawing.Size(450, 55);
+            this.WonStateSlots.TabIndex = 7;
+            this.WonStateSlots.Text = "PlaceHolder";
+            this.WonStateSlots.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.WonStateSlots.Click += new System.EventHandler(this.WonStateSlots_Click);
+            // 
             // SlotBetAmount
             // 
             this.SlotBetAmount.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -326,18 +341,17 @@
             this.SlotClickAccept.UseVisualStyleBackColor = true;
             this.SlotClickAccept.Click += new System.EventHandler(this.SlotClickAccept_Click);
             // 
-            // WonStateSlots
+            // moneyicondollar
             // 
-            this.WonStateSlots.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.WonStateSlots.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WonStateSlots.ForeColor = System.Drawing.Color.White;
-            this.WonStateSlots.Location = new System.Drawing.Point(37, 304);
-            this.WonStateSlots.Name = "WonStateSlots";
-            this.WonStateSlots.Size = new System.Drawing.Size(450, 55);
-            this.WonStateSlots.TabIndex = 7;
-            this.WonStateSlots.Text = "PlaceHolder";
-            this.WonStateSlots.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.WonStateSlots.Click += new System.EventHandler(this.WonStateSlots_Click);
+            this.moneyicondollar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.moneyicondollar.AutoSize = true;
+            this.moneyicondollar.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moneyicondollar.ForeColor = System.Drawing.Color.White;
+            this.moneyicondollar.Location = new System.Drawing.Point(60, 19);
+            this.moneyicondollar.Name = "moneyicondollar";
+            this.moneyicondollar.Size = new System.Drawing.Size(24, 25);
+            this.moneyicondollar.TabIndex = 7;
+            this.moneyicondollar.Text = "$";
             // 
             // MainWindow
             // 
@@ -387,6 +401,7 @@
         private System.Windows.Forms.Label SlotSecondNumber;
         private System.Windows.Forms.TextBox SlotBetAmount;
         private System.Windows.Forms.Label WonStateSlots;
+        private System.Windows.Forms.Label moneyicondollar;
     }
 }
 
