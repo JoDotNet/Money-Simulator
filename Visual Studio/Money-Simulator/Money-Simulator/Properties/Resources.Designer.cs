@@ -73,6 +73,16 @@ namespace Money_Simulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Heads {
+            get {
+                object obj = ResourceManager.GetObject("Heads", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu_FILL0_wght400_GRAD0_opsz48 {
             get {
                 object obj = ResourceManager.GetObject("menu_FILL0_wght400_GRAD0_opsz48", resourceCulture);
@@ -86,6 +96,16 @@ namespace Money_Simulator.Properties {
         internal static System.Drawing.Bitmap minimize_FILL1_wght400_GRAD0_opsz48 {
             get {
                 object obj = ResourceManager.GetObject("minimize_FILL1_wght400_GRAD0_opsz48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tails {
+            get {
+                object obj = ResourceManager.GetObject("Tails", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

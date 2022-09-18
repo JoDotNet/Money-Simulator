@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coinflip.cs" />
     <Compile Include="Slots.cs" />
     <Content Include="copy.txt" />
     <Content Include="copy2.txt" />
@@ -91,7 +92,9 @@
   <ItemGroup>
     <Content Include="Images\close_FILL1_wght400_GRAD0_opsz48.png" />
     <None Include="Images\menu_FILL0_wght400_GRAD0_opsz48.png" />
+    <Content Include="Images\Heads.png" />
     <Content Include="Images\minimize_FILL1_wght400_GRAD0_opsz48.png" />
+    <Content Include="Images\Tails.png" />
     <Content Include="Images\widgets_FILL1_wght400_GRAD0_opsz48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -63,13 +63,13 @@
             this.SlotFirstNumber = new System.Windows.Forms.Label();
             this.SlotClickAccept = new System.Windows.Forms.Button();
             this.CoinflipPage = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.HeadsButton = new System.Windows.Forms.Button();
+            this.TailsButton = new System.Windows.Forms.Button();
+            this.CoinflipWinResult = new System.Windows.Forms.Label();
+            this.AttemtedBetCoinflip = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CoinflipAnimationImage = new System.Windows.Forms.Label();
+            this.ConfirmCoinflipButton = new System.Windows.Forms.Button();
             this.TopBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.EarnPage.SuspendLayout();
@@ -546,111 +546,107 @@
             // 
             // CoinflipPage
             // 
-            this.CoinflipPage.Controls.Add(this.label1);
-            this.CoinflipPage.Controls.Add(this.textBox1);
+            this.CoinflipPage.Controls.Add(this.HeadsButton);
+            this.CoinflipPage.Controls.Add(this.TailsButton);
+            this.CoinflipPage.Controls.Add(this.CoinflipWinResult);
+            this.CoinflipPage.Controls.Add(this.AttemtedBetCoinflip);
             this.CoinflipPage.Controls.Add(this.panel3);
-            this.CoinflipPage.Controls.Add(this.button1);
+            this.CoinflipPage.Controls.Add(this.ConfirmCoinflipButton);
             this.CoinflipPage.Location = new System.Drawing.Point(12, 56);
             this.CoinflipPage.Name = "CoinflipPage";
             this.CoinflipPage.Size = new System.Drawing.Size(526, 582);
             this.CoinflipPage.TabIndex = 9;
             this.CoinflipPage.Visible = false;
             // 
-            // label1
+            // HeadsButton
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(37, 304);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(450, 77);
-            this.label1.TabIndex = 7;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.HeadsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
+            this.HeadsButton.FlatAppearance.BorderSize = 2;
+            this.HeadsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HeadsButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeadsButton.ForeColor = System.Drawing.Color.White;
+            this.HeadsButton.Location = new System.Drawing.Point(0, 407);
+            this.HeadsButton.Name = "HeadsButton";
+            this.HeadsButton.Size = new System.Drawing.Size(87, 58);
+            this.HeadsButton.TabIndex = 11;
+            this.HeadsButton.Text = "Heads";
+            this.HeadsButton.UseVisualStyleBackColor = true;
+            this.HeadsButton.Click += new System.EventHandler(this.HeadsButton_Click);
             // 
-            // textBox1
+            // TailsButton
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox1.Location = new System.Drawing.Point(115, 433);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 32);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TailsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
+            this.TailsButton.FlatAppearance.BorderSize = 2;
+            this.TailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TailsButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TailsButton.ForeColor = System.Drawing.Color.White;
+            this.TailsButton.Location = new System.Drawing.Point(438, 407);
+            this.TailsButton.Name = "TailsButton";
+            this.TailsButton.Size = new System.Drawing.Size(87, 58);
+            this.TailsButton.TabIndex = 10;
+            this.TailsButton.Text = "Tails";
+            this.TailsButton.UseVisualStyleBackColor = true;
+            this.TailsButton.Click += new System.EventHandler(this.TailsButton_Click);
+            // 
+            // CoinflipWinResult
+            // 
+            this.CoinflipWinResult.Dock = System.Windows.Forms.DockStyle.Top;
+            this.CoinflipWinResult.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoinflipWinResult.ForeColor = System.Drawing.Color.White;
+            this.CoinflipWinResult.Location = new System.Drawing.Point(0, 0);
+            this.CoinflipWinResult.Name = "CoinflipWinResult";
+            this.CoinflipWinResult.Size = new System.Drawing.Size(526, 72);
+            this.CoinflipWinResult.TabIndex = 9;
+            this.CoinflipWinResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // AttemtedBetCoinflip
+            // 
+            this.AttemtedBetCoinflip.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AttemtedBetCoinflip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
+            this.AttemtedBetCoinflip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AttemtedBetCoinflip.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AttemtedBetCoinflip.ForeColor = System.Drawing.Color.White;
+            this.AttemtedBetCoinflip.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.AttemtedBetCoinflip.Location = new System.Drawing.Point(115, 433);
+            this.AttemtedBetCoinflip.Margin = new System.Windows.Forms.Padding(0);
+            this.AttemtedBetCoinflip.Name = "AttemtedBetCoinflip";
+            this.AttemtedBetCoinflip.Size = new System.Drawing.Size(300, 32);
+            this.AttemtedBetCoinflip.TabIndex = 2;
+            this.AttemtedBetCoinflip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.CoinflipAnimationImage);
             this.panel3.Location = new System.Drawing.Point(0, 75);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(526, 136);
+            this.panel3.Size = new System.Drawing.Size(526, 297);
             this.panel3.TabIndex = 1;
             // 
-            // label3
+            // CoinflipAnimationImage
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(337, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 136);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "0";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.UseMnemonic = false;
+            this.CoinflipAnimationImage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoinflipAnimationImage.ForeColor = System.Drawing.Color.White;
+            this.CoinflipAnimationImage.Location = new System.Drawing.Point(115, -18);
+            this.CoinflipAnimationImage.Name = "CoinflipAnimationImage";
+            this.CoinflipAnimationImage.Size = new System.Drawing.Size(300, 297);
+            this.CoinflipAnimationImage.TabIndex = 0;
+            this.CoinflipAnimationImage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // ConfirmCoinflipButton
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(187, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 136);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "0";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.UseMnemonic = false;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(37, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 136);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "0";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.UseMnemonic = false;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
-            this.button1.FlatAppearance.BorderSize = 5;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 465);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(526, 117);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "CONFIRM";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ConfirmCoinflipButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ConfirmCoinflipButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
+            this.ConfirmCoinflipButton.FlatAppearance.BorderSize = 5;
+            this.ConfirmCoinflipButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConfirmCoinflipButton.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmCoinflipButton.ForeColor = System.Drawing.Color.White;
+            this.ConfirmCoinflipButton.Location = new System.Drawing.Point(0, 465);
+            this.ConfirmCoinflipButton.Name = "ConfirmCoinflipButton";
+            this.ConfirmCoinflipButton.Size = new System.Drawing.Size(526, 117);
+            this.ConfirmCoinflipButton.TabIndex = 0;
+            this.ConfirmCoinflipButton.Text = "CONFIRM";
+            this.ConfirmCoinflipButton.UseVisualStyleBackColor = true;
+            this.ConfirmCoinflipButton.Click += new System.EventHandler(this.ConfirmCoinflipButton_Click);
             // 
             // MainWindow
             // 
@@ -721,13 +717,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label CoinflipButton;
         private System.Windows.Forms.Panel CoinflipPage;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox AttemtedBetCoinflip;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ConfirmCoinflipButton;
+        private System.Windows.Forms.Label CoinflipAnimationImage;
+        private System.Windows.Forms.Label CoinflipWinResult;
+        private System.Windows.Forms.Button HeadsButton;
+        private System.Windows.Forms.Button TailsButton;
     }
 }
 

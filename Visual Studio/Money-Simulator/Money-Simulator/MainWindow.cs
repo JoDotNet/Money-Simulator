@@ -27,6 +27,11 @@ namespace Money_Simulator
         // Slots:
         private bool slotCooldown = false;
 
+        // Coinflip
+        private bool coinflipCooldown = false;
+        private string coinflipName = "";
+
+
         private void TopBar_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
@@ -338,6 +343,128 @@ namespace Money_Simulator
             }
         }
 
+        private void CoinflipBetGiver(int result, double betAmount)
+        {       
+            if (result == 1)
+            {
+                var handler = new DataHandler();
+                var addBal = handler.AddBalance(betAmount * 2);
+            }
+            else
+            {
+                var handler = new DataHandler();
+                var addBal = handler.AddBalance(betAmount);
+            }
+        }
 
+        private async void CoinflipAnimation()
+        {
+            CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Heads;
+            await Task.Delay(50);
+            CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Tails;
+            await Task.Delay(50);
+            CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Heads;
+            await Task.Delay(50);
+            CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Tails;
+            await Task.Delay(50);
+            CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Heads;
+            await Task.Delay(50);
+            CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Tails;
+            await Task.Delay(50);
+        }
+
+        // Coinflip
+        private async void ConfirmCoinflipButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("first");
+            if (AttemtedBetCoinflip.Text.Length > 0)
+            {   
+                
+
+                Console.WriteLine("second");
+                var handler = new DataHandler();
+                var balance = handler.AddBalance(0);
+                double attemtedBetAmount = double.Parse(AttemtedBetCoinflip.Text);
+
+                if (coinflipCooldown == false && attemtedBetAmount <= balance)
+                {
+                    coinflipCooldown = true;
+                    Console.WriteLine("Thirds");
+                    
+                    var balance2 = handler.AddBalance(-attemtedBetAmount);
+                    UpdateMoney();
+                    //CoinflipAnimation();
+
+                    var coinflip = new Coinflip();
+                    var coinflipResult = coinflip.CoinGamble();
+                    Console.WriteLine(coinflipResult);
+
+                    if (coinflipName == "Heads")
+                    {
+                        // User won on Heads
+                        if (coinflipResult == 1)
+                        {
+                            // Award user with Money
+                            CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Heads;
+                            CoinflipWinResult.Text = "You won 2x you bet! (heads)";
+                            CoinflipBetGiver(1, attemtedBetAmount);
+
+                        }
+                        else
+                        {
+                            CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Tails;
+                            CoinflipWinResult.Text = "You lost.";
+                        }
+                    }
+                    else if (coinflipName == "Tails")
+                    {
+                        // User won on Tails
+                        if (coinflipResult == 2)
+                        {
+                            CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Tails;
+                            // Award user with Money
+                            CoinflipWinResult.Text = "You won 2x you bet! (tails)";
+                            CoinflipBetGiver(1, attemtedBetAmount);
+
+                        }
+                        else
+                        {
+                            CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Heads;
+                            CoinflipWinResult.Text = "You lost.";
+                        }
+                    }
+                    else
+                    {
+                        CoinflipAnimationImage.Image = null;
+                        Console.WriteLine("Player has not selected Heads or Tails (error)");
+                        CoinflipBetGiver(2, attemtedBetAmount);
+                    }
+
+                    //var handler = new DataHandler();
+                    //var balance = handler.AddBalance(0);
+
+                    //double attemtedBetAmount = 0;
+
+                    await Task.Delay(3500);
+                    CoinflipAnimationImage.Image = null;
+                    //coinflipName = ""; -- makes it so player doesn't have to select every time.
+                    coinflipCooldown = false;
+                    CoinflipWinResult.Text = "";
+                    UpdateMoney();
+                }
+            }
+
+
+        }
+
+        private void HeadsButton_Click(object sender, EventArgs e)
+        {
+            coinflipName = "Heads";
+        }
+
+        private void TailsButton_Click(object sender, EventArgs e)
+        {
+            coinflipName = "Tails";
+        }
     }
 }
