@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.TopBar = new System.Windows.Forms.Panel();
+            this.CoinflipButton = new System.Windows.Forms.Label();
             this.moneyicondollar = new System.Windows.Forms.Label();
             this.MoneyDisplayLabel = new System.Windows.Forms.Label();
             this.SlotsButton = new System.Windows.Forms.Label();
@@ -36,11 +37,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.MenuButton = new System.Windows.Forms.Button();
             this.MimimizeButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
             this.EarnPage = new System.Windows.Forms.Panel();
             this.StatsPanel = new System.Windows.Forms.Panel();
+            this.MultiplierUpgradeButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.MultiplierPerClick = new System.Windows.Forms.Label();
+            this.UpgradeButton4 = new System.Windows.Forms.Button();
+            this.Upgrade4Label = new System.Windows.Forms.Label();
+            this.UpgradeButton3 = new System.Windows.Forms.Button();
+            this.Upgrade3Label = new System.Windows.Forms.Label();
+            this.UpgradeButton2 = new System.Windows.Forms.Button();
+            this.Upgrade2Label = new System.Windows.Forms.Label();
             this.UpgradeButton1 = new System.Windows.Forms.Button();
             this.Upgrade1Label = new System.Windows.Forms.Label();
             this.IncomePerClick = new System.Windows.Forms.Label();
@@ -53,33 +62,34 @@
             this.SlotSecondNumber = new System.Windows.Forms.Label();
             this.SlotFirstNumber = new System.Windows.Forms.Label();
             this.SlotClickAccept = new System.Windows.Forms.Button();
-            this.UpgradeButton2 = new System.Windows.Forms.Button();
-            this.Upgrade2Label = new System.Windows.Forms.Label();
-            this.UpgradeButton4 = new System.Windows.Forms.Button();
-            this.Upgrade4Label = new System.Windows.Forms.Label();
-            this.UpgradeButton3 = new System.Windows.Forms.Button();
-            this.Upgrade3Label = new System.Windows.Forms.Label();
-            this.MultiplierPerClick = new System.Windows.Forms.Label();
-            this.MultiplierUpgradeButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.CoinflipPage = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.TopBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.EarnPage.SuspendLayout();
             this.StatsPanel.SuspendLayout();
             this.SlotsPage.SuspendLayout();
             this.SlotResultPanel.SuspendLayout();
+            this.CoinflipPage.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopBar
             // 
             this.TopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
             this.TopBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.TopBar.Controls.Add(this.CoinflipButton);
             this.TopBar.Controls.Add(this.moneyicondollar);
             this.TopBar.Controls.Add(this.MoneyDisplayLabel);
             this.TopBar.Controls.Add(this.SlotsButton);
             this.TopBar.Controls.Add(this.EarnButton);
             this.TopBar.Controls.Add(this.panel1);
-            this.TopBar.Controls.Add(this.MenuButton);
             this.TopBar.Controls.Add(this.MimimizeButton);
             this.TopBar.Controls.Add(this.CloseButton);
             this.TopBar.Cursor = System.Windows.Forms.Cursors.Default;
@@ -91,13 +101,26 @@
             this.TopBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopBar_MouseMove);
             this.TopBar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TopBar_MouseUp);
             // 
+            // CoinflipButton
+            // 
+            this.CoinflipButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CoinflipButton.AutoSize = true;
+            this.CoinflipButton.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoinflipButton.ForeColor = System.Drawing.Color.White;
+            this.CoinflipButton.Location = new System.Drawing.Point(225, 25);
+            this.CoinflipButton.Name = "CoinflipButton";
+            this.CoinflipButton.Size = new System.Drawing.Size(85, 25);
+            this.CoinflipButton.TabIndex = 8;
+            this.CoinflipButton.Text = "Coinflip";
+            this.CoinflipButton.Click += new System.EventHandler(this.CoinflipButton_Click);
+            // 
             // moneyicondollar
             // 
             this.moneyicondollar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.moneyicondollar.AutoSize = true;
             this.moneyicondollar.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moneyicondollar.ForeColor = System.Drawing.Color.White;
-            this.moneyicondollar.Location = new System.Drawing.Point(60, 19);
+            this.moneyicondollar.Location = new System.Drawing.Point(6, 19);
             this.moneyicondollar.Name = "moneyicondollar";
             this.moneyicondollar.Size = new System.Drawing.Size(24, 25);
             this.moneyicondollar.TabIndex = 7;
@@ -109,7 +132,7 @@
             this.MoneyDisplayLabel.AutoSize = true;
             this.MoneyDisplayLabel.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MoneyDisplayLabel.ForeColor = System.Drawing.Color.White;
-            this.MoneyDisplayLabel.Location = new System.Drawing.Point(80, 19);
+            this.MoneyDisplayLabel.Location = new System.Drawing.Point(26, 19);
             this.MoneyDisplayLabel.Name = "MoneyDisplayLabel";
             this.MoneyDisplayLabel.Size = new System.Drawing.Size(24, 25);
             this.MoneyDisplayLabel.TabIndex = 6;
@@ -184,21 +207,6 @@
             this.button3.TabIndex = 0;
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // MenuButton
-            // 
-            this.MenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
-            this.MenuButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MenuButton.FlatAppearance.BorderSize = 0;
-            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MenuButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.MenuButton.Image = global::Money_Simulator.Properties.Resources.menu_FILL0_wght400_GRAD0_opsz48;
-            this.MenuButton.Location = new System.Drawing.Point(0, 0);
-            this.MenuButton.Name = "MenuButton";
-            this.MenuButton.Size = new System.Drawing.Size(50, 50);
-            this.MenuButton.TabIndex = 2;
-            this.MenuButton.UseVisualStyleBackColor = false;
-            // 
             // MimimizeButton
             // 
             this.MimimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
@@ -236,7 +244,7 @@
             // 
             this.EarnPage.Controls.Add(this.StatsPanel);
             this.EarnPage.Controls.Add(this.MoneyButton);
-            this.EarnPage.Location = new System.Drawing.Point(12, 56);
+            this.EarnPage.Location = new System.Drawing.Point(1000, 56);
             this.EarnPage.Name = "EarnPage";
             this.EarnPage.Size = new System.Drawing.Size(526, 582);
             this.EarnPage.TabIndex = 1;
@@ -261,6 +269,117 @@
             this.StatsPanel.Name = "StatsPanel";
             this.StatsPanel.Size = new System.Drawing.Size(526, 465);
             this.StatsPanel.TabIndex = 1;
+            // 
+            // MultiplierUpgradeButton
+            // 
+            this.MultiplierUpgradeButton.FlatAppearance.BorderSize = 2;
+            this.MultiplierUpgradeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MultiplierUpgradeButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MultiplierUpgradeButton.ForeColor = System.Drawing.Color.White;
+            this.MultiplierUpgradeButton.Location = new System.Drawing.Point(441, 410);
+            this.MultiplierUpgradeButton.Name = "MultiplierUpgradeButton";
+            this.MultiplierUpgradeButton.Size = new System.Drawing.Size(73, 37);
+            this.MultiplierUpgradeButton.TabIndex = 11;
+            this.MultiplierUpgradeButton.Text = "BUY";
+            this.MultiplierUpgradeButton.UseVisualStyleBackColor = true;
+            this.MultiplierUpgradeButton.Click += new System.EventHandler(this.MultiplierUpgradeButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(13, 414);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(337, 24);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "0.25x Income Boost ($10 000 000)";
+            // 
+            // MultiplierPerClick
+            // 
+            this.MultiplierPerClick.AutoSize = true;
+            this.MultiplierPerClick.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MultiplierPerClick.ForeColor = System.Drawing.Color.White;
+            this.MultiplierPerClick.Location = new System.Drawing.Point(0, 49);
+            this.MultiplierPerClick.Name = "MultiplierPerClick";
+            this.MultiplierPerClick.Size = new System.Drawing.Size(126, 24);
+            this.MultiplierPerClick.TabIndex = 9;
+            this.MultiplierPerClick.Text = "Multiplier: 1x";
+            // 
+            // UpgradeButton4
+            // 
+            this.UpgradeButton4.FlatAppearance.BorderSize = 2;
+            this.UpgradeButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpgradeButton4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpgradeButton4.ForeColor = System.Drawing.Color.White;
+            this.UpgradeButton4.Location = new System.Drawing.Point(440, 344);
+            this.UpgradeButton4.Name = "UpgradeButton4";
+            this.UpgradeButton4.Size = new System.Drawing.Size(73, 37);
+            this.UpgradeButton4.TabIndex = 8;
+            this.UpgradeButton4.Text = "BUY";
+            this.UpgradeButton4.UseVisualStyleBackColor = true;
+            this.UpgradeButton4.Click += new System.EventHandler(this.UpgradeButton4_Click);
+            // 
+            // Upgrade4Label
+            // 
+            this.Upgrade4Label.AutoSize = true;
+            this.Upgrade4Label.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Upgrade4Label.ForeColor = System.Drawing.Color.White;
+            this.Upgrade4Label.Location = new System.Drawing.Point(12, 348);
+            this.Upgrade4Label.Name = "Upgrade4Label";
+            this.Upgrade4Label.Size = new System.Drawing.Size(290, 24);
+            this.Upgrade4Label.TabIndex = 7;
+            this.Upgrade4Label.Text = "+$1 000 Income ($1 000 000)";
+            // 
+            // UpgradeButton3
+            // 
+            this.UpgradeButton3.FlatAppearance.BorderSize = 2;
+            this.UpgradeButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpgradeButton3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpgradeButton3.ForeColor = System.Drawing.Color.White;
+            this.UpgradeButton3.Location = new System.Drawing.Point(439, 295);
+            this.UpgradeButton3.Name = "UpgradeButton3";
+            this.UpgradeButton3.Size = new System.Drawing.Size(73, 37);
+            this.UpgradeButton3.TabIndex = 6;
+            this.UpgradeButton3.Text = "BUY";
+            this.UpgradeButton3.UseVisualStyleBackColor = true;
+            this.UpgradeButton3.Click += new System.EventHandler(this.UpgradeButton3_Click);
+            // 
+            // Upgrade3Label
+            // 
+            this.Upgrade3Label.AutoSize = true;
+            this.Upgrade3Label.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Upgrade3Label.ForeColor = System.Drawing.Color.White;
+            this.Upgrade3Label.Location = new System.Drawing.Point(11, 299);
+            this.Upgrade3Label.Name = "Upgrade3Label";
+            this.Upgrade3Label.Size = new System.Drawing.Size(254, 24);
+            this.Upgrade3Label.TabIndex = 5;
+            this.Upgrade3Label.Text = "+$100 Income ($100 000)\r\n";
+            // 
+            // UpgradeButton2
+            // 
+            this.UpgradeButton2.FlatAppearance.BorderSize = 2;
+            this.UpgradeButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpgradeButton2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpgradeButton2.ForeColor = System.Drawing.Color.White;
+            this.UpgradeButton2.Location = new System.Drawing.Point(440, 245);
+            this.UpgradeButton2.Name = "UpgradeButton2";
+            this.UpgradeButton2.Size = new System.Drawing.Size(73, 37);
+            this.UpgradeButton2.TabIndex = 4;
+            this.UpgradeButton2.Text = "BUY";
+            this.UpgradeButton2.UseVisualStyleBackColor = true;
+            this.UpgradeButton2.Click += new System.EventHandler(this.UpgradeButton2_Click);
+            // 
+            // Upgrade2Label
+            // 
+            this.Upgrade2Label.AutoSize = true;
+            this.Upgrade2Label.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Upgrade2Label.ForeColor = System.Drawing.Color.White;
+            this.Upgrade2Label.Location = new System.Drawing.Point(12, 249);
+            this.Upgrade2Label.Name = "Upgrade2Label";
+            this.Upgrade2Label.Size = new System.Drawing.Size(230, 24);
+            this.Upgrade2Label.TabIndex = 3;
+            this.Upgrade2Label.Text = "+$10 Income ($10 000)";
             // 
             // UpgradeButton1
             // 
@@ -320,7 +439,7 @@
             this.SlotsPage.Controls.Add(this.SlotBetAmount);
             this.SlotsPage.Controls.Add(this.SlotResultPanel);
             this.SlotsPage.Controls.Add(this.SlotClickAccept);
-            this.SlotsPage.Location = new System.Drawing.Point(600, 56);
+            this.SlotsPage.Location = new System.Drawing.Point(1000, 56);
             this.SlotsPage.Name = "SlotsPage";
             this.SlotsPage.Size = new System.Drawing.Size(526, 582);
             this.SlotsPage.TabIndex = 2;
@@ -425,116 +544,113 @@
             this.SlotClickAccept.UseVisualStyleBackColor = true;
             this.SlotClickAccept.Click += new System.EventHandler(this.SlotClickAccept_Click);
             // 
-            // UpgradeButton2
+            // CoinflipPage
             // 
-            this.UpgradeButton2.FlatAppearance.BorderSize = 2;
-            this.UpgradeButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpgradeButton2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpgradeButton2.ForeColor = System.Drawing.Color.White;
-            this.UpgradeButton2.Location = new System.Drawing.Point(440, 245);
-            this.UpgradeButton2.Name = "UpgradeButton2";
-            this.UpgradeButton2.Size = new System.Drawing.Size(73, 37);
-            this.UpgradeButton2.TabIndex = 4;
-            this.UpgradeButton2.Text = "BUY";
-            this.UpgradeButton2.UseVisualStyleBackColor = true;
-            this.UpgradeButton2.Click += new System.EventHandler(this.UpgradeButton2_Click);
+            this.CoinflipPage.Controls.Add(this.label1);
+            this.CoinflipPage.Controls.Add(this.textBox1);
+            this.CoinflipPage.Controls.Add(this.panel3);
+            this.CoinflipPage.Controls.Add(this.button1);
+            this.CoinflipPage.Location = new System.Drawing.Point(12, 56);
+            this.CoinflipPage.Name = "CoinflipPage";
+            this.CoinflipPage.Size = new System.Drawing.Size(526, 582);
+            this.CoinflipPage.TabIndex = 9;
+            this.CoinflipPage.Visible = false;
             // 
-            // Upgrade2Label
+            // label1
             // 
-            this.Upgrade2Label.AutoSize = true;
-            this.Upgrade2Label.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Upgrade2Label.ForeColor = System.Drawing.Color.White;
-            this.Upgrade2Label.Location = new System.Drawing.Point(12, 249);
-            this.Upgrade2Label.Name = "Upgrade2Label";
-            this.Upgrade2Label.Size = new System.Drawing.Size(230, 24);
-            this.Upgrade2Label.TabIndex = 3;
-            this.Upgrade2Label.Text = "+$10 Income ($10 000)";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(37, 304);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(450, 77);
+            this.label1.TabIndex = 7;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // UpgradeButton4
+            // textBox1
             // 
-            this.UpgradeButton4.FlatAppearance.BorderSize = 2;
-            this.UpgradeButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpgradeButton4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpgradeButton4.ForeColor = System.Drawing.Color.White;
-            this.UpgradeButton4.Location = new System.Drawing.Point(440, 344);
-            this.UpgradeButton4.Name = "UpgradeButton4";
-            this.UpgradeButton4.Size = new System.Drawing.Size(73, 37);
-            this.UpgradeButton4.TabIndex = 8;
-            this.UpgradeButton4.Text = "BUY";
-            this.UpgradeButton4.UseVisualStyleBackColor = true;
-            this.UpgradeButton4.Click += new System.EventHandler(this.UpgradeButton4_Click);
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.textBox1.Location = new System.Drawing.Point(115, 433);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(300, 32);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Upgrade4Label
+            // panel3
             // 
-            this.Upgrade4Label.AutoSize = true;
-            this.Upgrade4Label.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Upgrade4Label.ForeColor = System.Drawing.Color.White;
-            this.Upgrade4Label.Location = new System.Drawing.Point(12, 348);
-            this.Upgrade4Label.Name = "Upgrade4Label";
-            this.Upgrade4Label.Size = new System.Drawing.Size(290, 24);
-            this.Upgrade4Label.TabIndex = 7;
-            this.Upgrade4Label.Text = "+$1 000 Income ($1 000 000)";
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Location = new System.Drawing.Point(0, 75);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(526, 136);
+            this.panel3.TabIndex = 1;
             // 
-            // UpgradeButton3
+            // label3
             // 
-            this.UpgradeButton3.FlatAppearance.BorderSize = 2;
-            this.UpgradeButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpgradeButton3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpgradeButton3.ForeColor = System.Drawing.Color.White;
-            this.UpgradeButton3.Location = new System.Drawing.Point(439, 295);
-            this.UpgradeButton3.Name = "UpgradeButton3";
-            this.UpgradeButton3.Size = new System.Drawing.Size(73, 37);
-            this.UpgradeButton3.TabIndex = 6;
-            this.UpgradeButton3.Text = "BUY";
-            this.UpgradeButton3.UseVisualStyleBackColor = true;
-            this.UpgradeButton3.Click += new System.EventHandler(this.UpgradeButton3_Click);
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(337, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 136);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "0";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.UseMnemonic = false;
             // 
-            // Upgrade3Label
+            // label4
             // 
-            this.Upgrade3Label.AutoSize = true;
-            this.Upgrade3Label.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Upgrade3Label.ForeColor = System.Drawing.Color.White;
-            this.Upgrade3Label.Location = new System.Drawing.Point(11, 299);
-            this.Upgrade3Label.Name = "Upgrade3Label";
-            this.Upgrade3Label.Size = new System.Drawing.Size(254, 24);
-            this.Upgrade3Label.TabIndex = 5;
-            this.Upgrade3Label.Text = "+$100 Income ($100 000)\r\n";
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(187, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(150, 136);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "0";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.UseMnemonic = false;
             // 
-            // MultiplierPerClick
+            // label5
             // 
-            this.MultiplierPerClick.AutoSize = true;
-            this.MultiplierPerClick.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MultiplierPerClick.ForeColor = System.Drawing.Color.White;
-            this.MultiplierPerClick.Location = new System.Drawing.Point(0, 49);
-            this.MultiplierPerClick.Name = "MultiplierPerClick";
-            this.MultiplierPerClick.Size = new System.Drawing.Size(126, 24);
-            this.MultiplierPerClick.TabIndex = 9;
-            this.MultiplierPerClick.Text = "Multiplier: 1x";
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(37, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(150, 136);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "0";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.UseMnemonic = false;
             // 
-            // MultiplierUpgradeButton
+            // button1
             // 
-            this.MultiplierUpgradeButton.FlatAppearance.BorderSize = 2;
-            this.MultiplierUpgradeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MultiplierUpgradeButton.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MultiplierUpgradeButton.ForeColor = System.Drawing.Color.White;
-            this.MultiplierUpgradeButton.Location = new System.Drawing.Point(441, 410);
-            this.MultiplierUpgradeButton.Name = "MultiplierUpgradeButton";
-            this.MultiplierUpgradeButton.Size = new System.Drawing.Size(73, 37);
-            this.MultiplierUpgradeButton.TabIndex = 11;
-            this.MultiplierUpgradeButton.Text = "BUY";
-            this.MultiplierUpgradeButton.UseVisualStyleBackColor = true;
-            this.MultiplierUpgradeButton.Click += new System.EventHandler(this.MultiplierUpgradeButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(13, 414);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(337, 24);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "0.25x Income Boost ($10 000 000)";
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
+            this.button1.FlatAppearance.BorderSize = 5;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 465);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(526, 117);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "CONFIRM";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
@@ -542,6 +658,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(77)))));
             this.ClientSize = new System.Drawing.Size(550, 650);
+            this.Controls.Add(this.CoinflipPage);
             this.Controls.Add(this.SlotsPage);
             this.Controls.Add(this.EarnPage);
             this.Controls.Add(this.TopBar);
@@ -560,6 +677,9 @@
             this.SlotsPage.ResumeLayout(false);
             this.SlotsPage.PerformLayout();
             this.SlotResultPanel.ResumeLayout(false);
+            this.CoinflipPage.ResumeLayout(false);
+            this.CoinflipPage.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -569,7 +689,6 @@
         private System.Windows.Forms.Panel TopBar;
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Button MimimizeButton;
-        private System.Windows.Forms.Button MenuButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -600,6 +719,15 @@
         private System.Windows.Forms.Label MultiplierPerClick;
         private System.Windows.Forms.Button MultiplierUpgradeButton;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label CoinflipButton;
+        private System.Windows.Forms.Panel CoinflipPage;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }
 

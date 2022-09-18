@@ -64,13 +64,17 @@ namespace Money_Simulator
 
             UpdateMoney();
 
-            EarnPage.Visible = false;
-            EarnPage.Enabled = false;
+            EarnPage.Visible = true;
+            EarnPage.Enabled = true;
             EarnPage.Location = new Point(12, 56);
 
-            SlotsPage.Visible = true;
-            SlotsPage.Enabled = true;
+            SlotsPage.Visible = false;
+            SlotsPage.Enabled = false;
             SlotsPage.Location = new Point(12, 56);
+
+            CoinflipPage.Visible = false;
+            CoinflipPage.Enabled = false;
+            CoinflipPage.Location = new Point(12, 56);
         }
 
         // TopBar
@@ -97,6 +101,9 @@ namespace Money_Simulator
 
             SlotsPage.Visible = false;
             SlotsPage.Enabled = false;
+
+            CoinflipPage.Visible = false;
+            CoinflipPage.Enabled = false;
         }
 
         private void SlotsButton_Click(object sender, EventArgs e)
@@ -106,8 +113,22 @@ namespace Money_Simulator
 
             SlotsPage.Visible = true;
             SlotsPage.Enabled = true;
+
+            CoinflipPage.Visible = false;
+            CoinflipPage.Enabled = false;
         }
 
+        private void CoinflipButton_Click(object sender, EventArgs e)
+        {
+            EarnPage.Visible = false;
+            EarnPage.Enabled = false;
+
+            SlotsPage.Visible = false;
+            SlotsPage.Enabled = false;
+
+            CoinflipPage.Visible = true;
+            CoinflipPage.Enabled = true;
+        }
 
 
         // Add Money Per Click
@@ -311,10 +332,12 @@ namespace Money_Simulator
             // Check if the Player has enough money for the upgrade
             if (addBal >= 10000000)
             {
-                handler.AddBalance(-addBal);
+                handler.AddBalance(-10000000);
                 handler.AddIncome(0, .25);
                 UpdateMoney();
             }
         }
+
+
     }
 }
