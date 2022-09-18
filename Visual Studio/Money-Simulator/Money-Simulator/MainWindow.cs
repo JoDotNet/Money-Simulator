@@ -123,7 +123,8 @@ namespace Money_Simulator
             //dataHandler.TryFromLocal();
 
             var handler = new DataHandler();
-            var addBal = handler.AddBalance(1);
+            var addInc = handler.AddIncome(0, 0);
+            var addBal = handler.AddBalance(addInc);
 
             //MoneyDisplayLabel.Text = addBal.ToString();
             UpdateMoney();
@@ -134,9 +135,12 @@ namespace Money_Simulator
         {
             var handler = new DataHandler();
             var addBal = handler.AddBalance(0);
-            MoneyDisplayLabel.Text = addBal.ToString("N0", CultureInfo.InvariantCulture);
+            var addInc = handler.AddIncome(0, 0);
+            var getMul = handler.GetMultiplier(0);
 
-            IncomePerClick.Text = String.Concat("Income Per Click: $", 5);
+            MoneyDisplayLabel.Text = addBal.ToString("N", CultureInfo.InvariantCulture); // add N0 for no decimal points
+            IncomePerClick.Text = String.Concat("Income Per Click: $", addInc);
+            MultiplierPerClick.Text = String.Concat("Multiplier: ", getMul);
             //MoneyDisplayLabel.Text = Convert.ToString(addBal);
         }
 
@@ -147,9 +151,9 @@ namespace Money_Simulator
             var handler = new DataHandler();
             var balance = handler.AddBalance(0);
 
-            int attemtedBetAmount = 0;
+            double attemtedBetAmount = 0;
 
-            if (SlotBetAmount.TextLength > 0) attemtedBetAmount = int.Parse(SlotBetAmount.Text);
+            if (SlotBetAmount.TextLength > 0) attemtedBetAmount = double.Parse(SlotBetAmount.Text);
             
             bool allowedBet = false;
 
@@ -239,6 +243,78 @@ namespace Money_Simulator
         private void WonStateSlots_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        // Upgrade Income Per Click
+        private void UpgradeButton1_Click(object sender, EventArgs e)
+        {
+            var handler = new DataHandler();
+            var addBal = handler.AddBalance(0);
+
+            // Check if the Player has enough money for the upgrade
+            if (addBal >= 1000)
+            {
+                handler.AddBalance(-1000);
+                handler.AddIncome(1, 0);
+                UpdateMoney();
+            }
+        }
+
+        private void UpgradeButton2_Click(object sender, EventArgs e)
+        {
+            var handler = new DataHandler();
+            var addBal = handler.AddBalance(0);
+
+            // Check if the Player has enough money for the upgrade
+            if (addBal >= 10000)
+            {
+                handler.AddBalance(-10000);
+                handler.AddIncome(10, 0);
+                UpdateMoney();
+            }
+        }
+
+        private void UpgradeButton3_Click(object sender, EventArgs e)
+        {
+            var handler = new DataHandler();
+            var addBal = handler.AddBalance(0);
+
+            // Check if the Player has enough money for the upgrade
+            if (addBal >= 100000)
+            {
+                handler.AddBalance(-100000);
+                handler.AddIncome(100, 0);
+                UpdateMoney();
+            }
+        }
+
+        private void UpgradeButton4_Click(object sender, EventArgs e)
+        {
+            var handler = new DataHandler();
+            var addBal = handler.AddBalance(0);
+
+            // Check if the Player has enough money for the upgrade
+            if (addBal >= 1000000)
+            {
+                handler.AddBalance(-1000000);
+                handler.AddIncome(1000, 0);
+                UpdateMoney();
+            }
+        }
+
+        private void MultiplierUpgradeButton_Click(object sender, EventArgs e)
+        {
+            var handler = new DataHandler();
+            var addBal = handler.AddBalance(0);
+
+            // Check if the Player has enough money for the upgrade
+            if (addBal >= 10000000)
+            {
+                handler.AddBalance(-addBal);
+                handler.AddIncome(0, .25);
+                UpdateMoney();
+            }
         }
     }
 }

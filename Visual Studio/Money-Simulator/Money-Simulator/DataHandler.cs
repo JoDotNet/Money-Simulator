@@ -14,14 +14,16 @@ namespace Money_Simulator
 {
     public class DataObject
     {
-        public int JBalance { get; set; }
+        public double JBalance { get; set; }
+        public double JIncome { get; set; }
+        public double JBoost { get; set; }
     }
 
     internal class DataHandler
     {
         private const string FileName = "savedata.json";
 
-        public int AddBalance(int amt)
+        public double AddBalance(double amt)
         {
             var data = Load();
             data.JBalance = data.JBalance + amt;
@@ -29,6 +31,23 @@ namespace Money_Simulator
 
             return data.JBalance;
         }
+
+        public double AddIncome(double amt, double boostAmt)
+        {
+            var data = Load();
+            data.JIncome = data.JIncome + amt;
+            data.JBoost = data.JBoost + boostAmt;
+            Save(data);
+
+            return data.JIncome * data.JBoost;
+        }
+
+        public double GetMultiplier(double amt)
+        {
+            var data = Load();
+            return data.JBoost;
+        }
+
 
         private DataObject Load()
         {
