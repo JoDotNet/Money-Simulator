@@ -12,3 +12,4 @@ D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Debu
 D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\bin\Debug\Newtonsoft.Json.dll
 D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\bin\Debug\Newtonsoft.Json.xml
 D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Debug\Money-Simulator.csproj.CopyComplete
+D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Debug\Money_Simulator.Menu.resources

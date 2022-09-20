@@ -21,7 +21,7 @@ namespace Money_Simulator
 
     internal class DataHandler
     {
-        private const string FileName = "savedata.json";
+        private const string FileName = "savedata.sav";
 
         public double AddBalance(double amt)
         {

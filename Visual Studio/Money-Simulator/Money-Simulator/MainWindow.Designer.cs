@@ -35,10 +35,6 @@
             this.SlotsButton = new System.Windows.Forms.Label();
             this.EarnButton = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.MimimizeButton = new System.Windows.Forms.Button();
-            this.CloseButton = new System.Windows.Forms.Button();
             this.EarnPage = new System.Windows.Forms.Panel();
             this.StatsPanel = new System.Windows.Forms.Panel();
             this.MultiplierUpgradeButton = new System.Windows.Forms.Button();
@@ -70,6 +66,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.CoinflipAnimationImage = new System.Windows.Forms.Label();
             this.ConfirmCoinflipButton = new System.Windows.Forms.Button();
+            this.ExpandMenuButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.MimimizeButton = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.TopBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.EarnPage.SuspendLayout();
@@ -84,6 +85,7 @@
             // 
             this.TopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
             this.TopBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.TopBar.Controls.Add(this.ExpandMenuButton);
             this.TopBar.Controls.Add(this.CoinflipButton);
             this.TopBar.Controls.Add(this.moneyicondollar);
             this.TopBar.Controls.Add(this.MoneyDisplayLabel);
@@ -107,7 +109,7 @@
             this.CoinflipButton.AutoSize = true;
             this.CoinflipButton.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CoinflipButton.ForeColor = System.Drawing.Color.White;
-            this.CoinflipButton.Location = new System.Drawing.Point(225, 25);
+            this.CoinflipButton.Location = new System.Drawing.Point(168, 24);
             this.CoinflipButton.Name = "CoinflipButton";
             this.CoinflipButton.Size = new System.Drawing.Size(85, 25);
             this.CoinflipButton.TabIndex = 8;
@@ -144,7 +146,7 @@
             this.SlotsButton.AutoSize = true;
             this.SlotsButton.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SlotsButton.ForeColor = System.Drawing.Color.White;
-            this.SlotsButton.Location = new System.Drawing.Point(315, 25);
+            this.SlotsButton.Location = new System.Drawing.Point(258, 24);
             this.SlotsButton.Name = "SlotsButton";
             this.SlotsButton.Size = new System.Drawing.Size(61, 25);
             this.SlotsButton.TabIndex = 5;
@@ -157,7 +159,7 @@
             this.EarnButton.AutoSize = true;
             this.EarnButton.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EarnButton.ForeColor = System.Drawing.Color.White;
-            this.EarnButton.Location = new System.Drawing.Point(382, 25);
+            this.EarnButton.Location = new System.Drawing.Point(325, 24);
             this.EarnButton.Name = "EarnButton";
             this.EarnButton.Size = new System.Drawing.Size(57, 25);
             this.EarnButton.TabIndex = 4;
@@ -175,70 +177,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 600);
             this.panel1.TabIndex = 3;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.button2.Image = global::Money_Simulator.Properties.Resources.minimize_FILL1_wght400_GRAD0_opsz48;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(450, 0);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button2.Size = new System.Drawing.Size(50, 50);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
-            this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.button3.Image = global::Money_Simulator.Properties.Resources.close_FILL1_wght400_GRAD0_opsz48;
-            this.button3.Location = new System.Drawing.Point(0, 550);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 50);
-            this.button3.TabIndex = 0;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // MimimizeButton
-            // 
-            this.MimimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
-            this.MimimizeButton.FlatAppearance.BorderSize = 0;
-            this.MimimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MimimizeButton.Font = new System.Drawing.Font("Verdana", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MimimizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.MimimizeButton.Image = global::Money_Simulator.Properties.Resources.minimize_FILL1_wght400_GRAD0_opsz48;
-            this.MimimizeButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.MimimizeButton.Location = new System.Drawing.Point(450, 0);
-            this.MimimizeButton.Name = "MimimizeButton";
-            this.MimimizeButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.MimimizeButton.Size = new System.Drawing.Size(50, 50);
-            this.MimimizeButton.TabIndex = 1;
-            this.MimimizeButton.UseVisualStyleBackColor = false;
-            this.MimimizeButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MimimizeButton_MouseClick);
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
-            this.CloseButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CloseButton.FlatAppearance.BorderSize = 0;
-            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
-            this.CloseButton.Image = global::Money_Simulator.Properties.Resources.close_FILL1_wght400_GRAD0_opsz48;
-            this.CloseButton.Location = new System.Drawing.Point(500, 0);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(50, 50);
-            this.CloseButton.TabIndex = 0;
-            this.CloseButton.UseVisualStyleBackColor = false;
-            this.CloseButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseClick);
             // 
             // EarnPage
             // 
@@ -269,6 +207,7 @@
             this.StatsPanel.Name = "StatsPanel";
             this.StatsPanel.Size = new System.Drawing.Size(526, 465);
             this.StatsPanel.TabIndex = 1;
+            this.StatsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.StatsPanel_Paint);
             // 
             // MultiplierUpgradeButton
             // 
@@ -552,7 +491,7 @@
             this.CoinflipPage.Controls.Add(this.AttemtedBetCoinflip);
             this.CoinflipPage.Controls.Add(this.panel3);
             this.CoinflipPage.Controls.Add(this.ConfirmCoinflipButton);
-            this.CoinflipPage.Location = new System.Drawing.Point(12, 56);
+            this.CoinflipPage.Location = new System.Drawing.Point(1000, 56);
             this.CoinflipPage.Name = "CoinflipPage";
             this.CoinflipPage.Size = new System.Drawing.Size(526, 582);
             this.CoinflipPage.TabIndex = 9;
@@ -648,6 +587,89 @@
             this.ConfirmCoinflipButton.UseVisualStyleBackColor = true;
             this.ConfirmCoinflipButton.Click += new System.EventHandler(this.ConfirmCoinflipButton_Click);
             // 
+            // ExpandMenuButton
+            // 
+            this.ExpandMenuButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
+            this.ExpandMenuButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExpandMenuButton.FlatAppearance.BorderSize = 0;
+            this.ExpandMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExpandMenuButton.Font = new System.Drawing.Font("Verdana", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpandMenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.ExpandMenuButton.Image = global::Money_Simulator.Properties.Resources.widgets_FILL0_wght400_GRAD0_opsz40;
+            this.ExpandMenuButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ExpandMenuButton.Location = new System.Drawing.Point(400, 0);
+            this.ExpandMenuButton.Name = "ExpandMenuButton";
+            this.ExpandMenuButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ExpandMenuButton.Size = new System.Drawing.Size(50, 50);
+            this.ExpandMenuButton.TabIndex = 9;
+            this.ExpandMenuButton.UseVisualStyleBackColor = false;
+            this.ExpandMenuButton.Click += new System.EventHandler(this.ExpandMenuButton_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Verdana", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.button2.Image = global::Money_Simulator.Properties.Resources.minimize_FILL1_wght400_GRAD0_opsz48;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(450, 0);
+            this.button2.Name = "button2";
+            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button2.Size = new System.Drawing.Size(50, 50);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
+            this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.button3.Image = global::Money_Simulator.Properties.Resources.close_FILL1_wght400_GRAD0_opsz48;
+            this.button3.Location = new System.Drawing.Point(0, 550);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(50, 50);
+            this.button3.TabIndex = 0;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // MimimizeButton
+            // 
+            this.MimimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
+            this.MimimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MimimizeButton.FlatAppearance.BorderSize = 0;
+            this.MimimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MimimizeButton.Font = new System.Drawing.Font("Verdana", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MimimizeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.MimimizeButton.Image = global::Money_Simulator.Properties.Resources.minimize_FILL1_wght400_GRAD0_opsz48;
+            this.MimimizeButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.MimimizeButton.Location = new System.Drawing.Point(450, 0);
+            this.MimimizeButton.Name = "MimimizeButton";
+            this.MimimizeButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.MimimizeButton.Size = new System.Drawing.Size(50, 50);
+            this.MimimizeButton.TabIndex = 1;
+            this.MimimizeButton.UseVisualStyleBackColor = false;
+            this.MimimizeButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.MimimizeButton_MouseClick);
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(130)))), ((int)(((byte)(145)))));
+            this.CloseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CloseButton.FlatAppearance.BorderSize = 0;
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(235)))), ((int)(((byte)(237)))));
+            this.CloseButton.Image = global::Money_Simulator.Properties.Resources.close_FILL1_wght400_GRAD0_opsz48;
+            this.CloseButton.Location = new System.Drawing.Point(500, 0);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(50, 50);
+            this.CloseButton.TabIndex = 0;
+            this.CloseButton.UseVisualStyleBackColor = false;
+            this.CloseButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseClick);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -724,6 +746,7 @@
         private System.Windows.Forms.Label CoinflipWinResult;
         private System.Windows.Forms.Button HeadsButton;
         private System.Windows.Forms.Button TailsButton;
+        private System.Windows.Forms.Button ExpandMenuButton;
     }
 }
 

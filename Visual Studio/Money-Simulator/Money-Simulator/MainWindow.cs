@@ -80,6 +80,14 @@ namespace Money_Simulator
             CoinflipPage.Visible = false;
             CoinflipPage.Enabled = false;
             CoinflipPage.Location = new Point(12, 56);
+
+            /*
+            while (true)
+            {
+                Console.WriteLine(this.Location);
+                await Task.Delay(1000);
+            }
+            */
         }
 
         // TopBar
@@ -95,7 +103,12 @@ namespace Money_Simulator
             this.WindowState = FormWindowState.Minimized;
         }
 
-
+        // Expandable Menu Button
+        private void ExpandMenuButton_Click(object sender, EventArgs e)
+        {
+            var menuForm = new Menu();
+            menuForm.ShowDialog();
+        }
 
         // Navigation
 
@@ -165,7 +178,7 @@ namespace Money_Simulator
             var getMul = handler.GetMultiplier(0);
 
             MoneyDisplayLabel.Text = addBal.ToString("N", CultureInfo.InvariantCulture); // add N0 for no decimal points
-            IncomePerClick.Text = String.Concat("Income Per Click: $", addInc);
+            IncomePerClick.Text = String.Concat("Income Per Click: $", addInc.ToString("N0", CultureInfo.InvariantCulture));
             MultiplierPerClick.Text = String.Concat("Multiplier: ", getMul);
             //MoneyDisplayLabel.Text = Convert.ToString(addBal);
         }
@@ -360,17 +373,22 @@ namespace Money_Simulator
         private async void CoinflipAnimation()
         {
             CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Heads;
-            await Task.Delay(50);
+            await Task.Delay(100);
             CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Tails;
-            await Task.Delay(50);
+            await Task.Delay(100);
             CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Heads;
-            await Task.Delay(50);
+            await Task.Delay(100);
             CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Tails;
-            await Task.Delay(50);
+            await Task.Delay(100);
             CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Heads;
-            await Task.Delay(50);
+            await Task.Delay(100);
             CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Tails;
-            await Task.Delay(50);
+            await Task.Delay(100);
+            CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Heads;
+            await Task.Delay(100);
+            CoinflipAnimationImage.Image = Money_Simulator.Properties.Resources.Tails;
+            await Task.Delay(100);
+            CoinflipAnimationImage.Image = null;
         }
 
         // Coinflip
@@ -390,6 +408,7 @@ namespace Money_Simulator
                 {
                     coinflipCooldown = true;
                     Console.WriteLine("Thirds");
+                    //CoinflipAnimation();
                     
                     var balance2 = handler.AddBalance(-attemtedBetAmount);
                     UpdateMoney();
@@ -399,6 +418,7 @@ namespace Money_Simulator
                     var coinflipResult = coinflip.CoinGamble();
                     Console.WriteLine(coinflipResult);
 
+                    //await Task.Delay(1500);
                     if (coinflipName == "Heads")
                     {
                         // User won on Heads
@@ -465,6 +485,11 @@ namespace Money_Simulator
         private void TailsButton_Click(object sender, EventArgs e)
         {
             coinflipName = "Tails";
+        }
+
+        private void StatsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

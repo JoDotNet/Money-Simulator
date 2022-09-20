@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coinflip.cs" />
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Slots.cs" />
     <Content Include="copy.txt" />
     <Content Include="copy2.txt" />
@@ -64,6 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,9 +101,11 @@
   <ItemGroup>
     <Content Include="Images\close_FILL1_wght400_GRAD0_opsz48.png" />
     <None Include="Images\menu_FILL0_wght400_GRAD0_opsz48.png" />
+    <Content Include="Images\expand_more_FILL0_wght400_GRAD0_opsz48.png" />
     <Content Include="Images\Heads.png" />
     <Content Include="Images\minimize_FILL1_wght400_GRAD0_opsz48.png" />
     <Content Include="Images\Tails.png" />
+    <Content Include="Images\widgets_FILL0_wght400_GRAD0_opsz40.png" />
     <Content Include="Images\widgets_FILL1_wght400_GRAD0_opsz48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
