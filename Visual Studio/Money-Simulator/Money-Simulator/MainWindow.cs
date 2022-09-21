@@ -23,6 +23,7 @@ namespace Money_Simulator
 
 
         // Game Variables
+        private bool rigged = false;
 
         // Slots:
         private bool slotCooldown = false;
@@ -112,7 +113,7 @@ namespace Money_Simulator
 
         // Navigation
 
-        private void EarnButton_Click(object sender, EventArgs e)
+        public void EarnButton_Click(object sender, EventArgs e)
         {
             EarnPage.Visible = true;
             EarnPage.Enabled = true;
@@ -124,7 +125,7 @@ namespace Money_Simulator
             CoinflipPage.Enabled = false;
         }
 
-        private void SlotsButton_Click(object sender, EventArgs e)
+        public void SlotsButton_Click(object sender, EventArgs e)
         {
             EarnPage.Visible = false;
             EarnPage.Enabled = false;
@@ -136,7 +137,7 @@ namespace Money_Simulator
             CoinflipPage.Enabled = false;
         }
 
-        private void CoinflipButton_Click(object sender, EventArgs e)
+        public void CoinflipButton_Click(object sender, EventArgs e)
         {
             EarnPage.Visible = false;
             EarnPage.Enabled = false;
@@ -213,7 +214,7 @@ namespace Money_Simulator
 
 
                     var slots = new Slots();
-                    var getSlots = slots.SlotGamble();
+                    var getSlots = slots.SlotGamble(rigged);
 
                     //Console.WriteLine(getSlots);
                     var slotWinAmount = getSlots.Remove(getSlots.Length - 3);
@@ -415,7 +416,7 @@ namespace Money_Simulator
                     //CoinflipAnimation();
 
                     var coinflip = new Coinflip();
-                    var coinflipResult = coinflip.CoinGamble();
+                    var coinflipResult = coinflip.CoinGamble(rigged, coinflipName);
                     Console.WriteLine(coinflipResult);
 
                     //await Task.Delay(1500);
@@ -490,6 +491,20 @@ namespace Money_Simulator
         private void StatsPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+
+
+        private void RiggedButton_Click(object sender, EventArgs e)
+        {
+            if (rigged == false)
+            {
+                rigged = true;
+            }
+            else
+            {
+                rigged = false;
+            }
         }
     }
 }

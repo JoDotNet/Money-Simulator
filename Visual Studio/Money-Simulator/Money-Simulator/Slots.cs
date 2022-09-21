@@ -25,6 +25,10 @@ namespace Money_Simulator
             return Num1.ToString() + Num2.ToString() + Num3.ToString();
         }
 
+        private string RiggedNumbers()
+        {
+            return "777";
+        }
 
         private string GetNumbers()
         {
@@ -41,9 +45,12 @@ namespace Money_Simulator
 
 
         // Game Function (Request this)
-        public string SlotGamble()
+        public string SlotGamble(bool rigged)
         {
-            var getnumbers = GetNumbers();
+            var getnumbers = "";
+
+            if (rigged == false) getnumbers = GetNumbers();
+            else getnumbers = RiggedNumbers();
 
             string twoEqual = "0";
             string threeEqual = "0";

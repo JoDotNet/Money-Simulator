@@ -18,10 +18,33 @@ namespace Money_Simulator
 
             return randomNumber;
         }
-        public int CoinGamble()
+
+        private int Rigged(string coinflipname)
         {
-            
-            return GetRandomNumber();
+            int returnvalue = 0;
+
+            if (coinflipname == "Heads")
+            {
+                returnvalue = 1;
+            }
+            else
+            {
+                returnvalue = 2;
+            }
+
+
+            return returnvalue;
+        }
+        public int CoinGamble(bool rigged, string coinflipname)
+        {
+            if (rigged == true)
+            {
+                return Rigged(coinflipname);
+            }
+            else
+            {
+                return GetRandomNumber();
+            }
         }
     }
 }

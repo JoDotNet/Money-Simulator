@@ -1,6 +1,3 @@
-D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\bin\Release\Money-Simulator.exe.config
-D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\bin\Release\Money-Simulator.exe
-D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\bin\Release\Money-Simulator.pdb
 D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\bin\Release\Newtonsoft.Json.dll
 D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\bin\Release\Newtonsoft.Json.xml
 D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Release\Money-Simulator.csproj.AssemblyReference.cache
@@ -10,5 +7,9 @@ D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Rele
 D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Release\Money-Simulator.csproj.GenerateResource.cache
 D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Release\Money-Simulator.csproj.CoreCompileInputs.cache
 D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Release\Money-Simulator.csproj.CopyComplete
-D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Release\Money-Simulator.exe
-D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Release\Money-Simulator.pdb
+D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\bin\Release\Money Simulator.exe.config
+D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\bin\Release\Money Simulator.exe
+D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\bin\Release\Money Simulator.pdb
+D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Release\Money_Simulator.Menu.resources
+D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Release\Money Simulator.exe
+D:\GitHub\Money-Simulator\Visual Studio\Money-Simulator\Money-Simulator\obj\Release\Money Simulator.pdb
